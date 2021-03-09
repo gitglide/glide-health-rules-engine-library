@@ -1054,6 +1054,7 @@ class Statement(ASTNodeBase):
 		for exp in ExpressionBase.evaluated_list:
 			if not list(evaluated_list).__contains__(exp):
 				evaluated_list.append(exp)
+		ExpressionBase.evaluated_list = []		
 		return self.expression.evaluate(thing)
 
 	def to_graphviz(self, digraph, *args, **kwargs):
